@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=500,initial-scale=1,user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="popup-main.css" />
+  </head>
+
+<body>
+
+<h3 class="title"><img class="icon" src="../128icon.png"/>Filter Affinity Settings</h3>
+<div id="content">
+	<div class="tab-container">
+		<div class="tab active" data-tab-content="filters">Filters</div>
+		<div class="tab" data-tab-content="allowlist">Allowlist</div>
+    <div class="tab" data-tab-content="options">Options</div>
+    <div class="tab" data-tab-content="dataOptions">Data</div>
+    <div class="tab" data-tab-content="about">About</div>
+	</div>
+
+	<div class="tab-content-container">
+    <div class="tab-content filters active">
+      <div class="directions">Filter these artists:<i>(One on each line, case-sensitive)</i></div>
+        <div>
+          <textarea id="artist-names"></textarea>
+        </div>
+        <div class="directions">Filter submissions containing these words/phrases:<i>(One on each line, case-insensitive, short description/titles only)</i></div>
+        <div>
+          <textarea id="filter-descriptions"></textarea>
+        </div>
+        <div class="directions">Only Show:</div>
+        <div>
+          <input id="faGeneral" class="fa-rating" type="checkbox" value="r-general"/><label for="faGeneral">General Submissions</label><br/>
+          <input id="faMature" class="fa-rating" type="checkbox" value="r-mature"/><label for="faMature">Mature Submissions</label><br/>
+          <input id="faAdult" class="fa-rating" type="checkbox" value="r-adult"/><label for="faAdult">Adult Submissions</label>
+        </div>
+    </div>
+    
+    <div class="tab-content allowlist">
+      <div class="directions">Always show submissions by these artists: <i>(One on each line, overrides all other settings)</i></div>
+      <div>
+          <textarea id="artist-allowlist"></textarea>
+      </div>
+    </div>
+
+    <div class="tab-content options">
+      <div>
+        <input id="faEnabled" type="checkbox"/><label for="faEnabled">Enable Extension</label>
+      </div>
+      <div>
+        <input id="faMessaging" type="checkbox"/><label for="faMessaging">Show plugin messages</label>
+      </div>
+      <div>
+          <input id="faHideThumbs" type="checkbox"/><label for="faHideThumbs">Only hide thumbnails</label>
+      </div>
+      <div>
+          <input id="faRemoveBanner" type="checkbox" value=""/><label for="faRemoveBanner">Hide Current Banner</label>
+      </div>
+
+      <div class="sync-settings">
+        <h5>Cloud Sync Settings:</h5>
+        <button id="sync-upload" class="button">Upload settings to cloud</button>
+        <button id="sync-download" class="button">
+          Download settings from cloud<br/><strong>(WARNING: Overrides current settings!)</strong>
+        </button>
+      </div>
+
+      <h5>Use the button below to reset all settings (filter lists, allowlists, etc.) to their defaults:</h5>
+      <div>
+        <button id="clear-options" class="button">Clear All Settings</button>
+      </div>
+      <br/>
+    </div>
+
+    <div class="tab-content about">
+      <p>
+        This plugin was developed by <strong>Forest</strong> (<a href="http://www.furaffinity.net/user/forest-wolf" target="_new">Furaffinity</a> / <a href="https://www.weasyl.com/~forest" target="_new">Weasyl</a>) for use on <strong>Furaffinity.net.</strong>  I can be reached at either of the two sites listed above.
+      </p>
+
+      <p>It filters out content based on entered <strong>artist names</strong> and <strong>keywords</strong> in the submission titles on the Home (artist names only), Browse, and Search pages.  If you wish to always display artwork by a certain artist, their names can be <strong>allowlisted</strong> to do just that.
+      </p>
+
+      <p>Hovering over a submission thumbnail will show a <strong>Add/Remove option box.</strong>  Clicking the <strong>plus(+) symbol</strong> adds the artist's name to the filter list automatically.  Clicking the <strong>minus(-) symbol</strong> removes the artist from the filter list.
+      </p>
+      <br/>
+
+      <p>
+        <b>If this plugin has been useful to you</b>, consider tossing a few dollars my way! I spent a lot of time and effort on this, so I'd appreciate it!  :)
+      </p>
+
+      <a href='https://ko-fi.com/A336210S' target='_blank' style="display:block;margin:0 auto;text-align:center;"><img height='36' style='border:0px;height:36px;' src='../kofi5.png' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+    </div>
+
+    <div class="tab-content dataOptions">
+      <div class="directions">Copy/Paste Plugin data below:</div>
+      <textarea id="json-data"></textarea>
+      <div>
+        <button id="load-json-data">Load data from text box<br/><strong>(WARNING: Overrides current settings!)</button>
+      </div>
+      <div class="sync-settings">
+        <h5>The button below will clear all stored cloud data:</h5>
+        <button id="sync-clear">Clear All Cloud Data</button>
+      </div>
+    </div>
+	</div>
+
+  <div class="save">
+    <button id="save-options" class="button">Save</button>
+  </div>
+</div>
+
+<script src="popup-main.js"></script>
+
+</body>
+</html>

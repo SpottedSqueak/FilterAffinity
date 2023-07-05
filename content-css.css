@@ -1,0 +1,61 @@
+#description_popup.hide {
+	display: none !important;
+}
+
+.filter-affinity-container {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.t-image:hover .filter-affinity-container,
+.t-flash:hover .filter-affinity-container,
+.t-text:hover .filter-affinity-container {
+	display: block;
+}
+
+.filter-affinity-container > div {
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0 4px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.filter-affinity-container > .add:hover {
+	color: red;
+}
+
+.filter-affinity-container > .remove:hover {
+	color: orange;
+}
+
+.hide-thumb img, .hide-banner {
+	visibility: hidden;
+}
+
+.hide-img {
+	display: none !important;
+}
+
+.desc-info {
+	display: none;
+}
+
+/**Disable all components**/
+
+.disable-fa :hover .filter-affinity-container {
+	display: none;
+}
+
+.disable-fa .hide-thumb img. .disable-fa .hide-banner {
+	visibility: visible;
+}
+
+.disable-fa .hide-img {
+	display: inline-block !important;
+} 
